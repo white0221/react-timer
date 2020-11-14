@@ -1,32 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, Button } from '@material-ui/core';
 
-const Counter = () => {
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const descriment = () => {
+    setCount(count - 1);
+  };
+
   return (
     <>
       <Card>
         <CardContent>
-          Counter
-          <div>
+          <h3>Counter</h3>
+          <p>{count}</p>
+          <p>
             <Button onClick={increment} variant='contained' color='primary'>
               +1
             </Button>
             <Button onClick={descriment} variant='contained' color='secondary'>
               -1
             </Button>
-          </div>
+          </p>
         </CardContent>
       </Card>
     </>
   );
 };
-
-const increment = () => {
-  console.log(1);
-}
-
-const descriment = () => {
-  console.log(-1);
-}
 
 export default Counter;
