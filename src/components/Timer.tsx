@@ -25,6 +25,7 @@ function Timer() {
       update(remain);
     }, 1000);
     setIntervalId(intervalId);
+    console.log(remainSeconds);
   };
 
   const stop = () => {
